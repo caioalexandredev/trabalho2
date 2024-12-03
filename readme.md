@@ -38,6 +38,24 @@ Com isso todas as tabelas devem ser devidamente criadas no banco de dados fornec
 > py manage.py runserver
 ```
 
+Para instalar o módulo responsável por request a API externas
+
+```
+> pip install requests
+```
+
+Para instalar o módulo responsável por variaveis de ambiente
+
+```
+> pip install python-decouple
+```
+
+Para instalar o módulo responsável por gerar arquivo word
+
+```
+> pip install python-docx
+```
+
 ## ✒️ Autores
 
 4° período do curso noturno de sistemas para internet do Instituto Federal de Educação, Ciências e Tecnoclogia do Tocantins - *Campus Palmas*
