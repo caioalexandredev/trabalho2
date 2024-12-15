@@ -81,7 +81,7 @@ DATABASES = {
         "USER": "root",
         "PASSWORD": "mukit",
         "HOST": "127.0.0.1",
-        "PORT": "3306",
+        "PORT": "3307",
     }
 }
 
@@ -126,3 +126,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db' 
+SESSION_COOKIE_NAME = 'sessionid'  # Nome do cookie onde o ID da sessão será armazenado
+SESSION_COOKIE_AGE = 3600  # Tempo de expiração da sessão (em segundos, 1 hora)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False

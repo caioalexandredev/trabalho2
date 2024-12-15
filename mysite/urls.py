@@ -17,11 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path
-from .views import procedimento_pericial
-from .views import gerar_arquivo_word_teste
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/galileu/procedimento_pericial/<int:id>/', procedimento_pericial, name='procedimento_pericial'),
-    path('api/word/gerar_documento_teste/', gerar_arquivo_word_teste, name='gerar_documento_teste'),
+    path('api/galileu/procedimento_pericial/<int:id>/', views.procedimento_pericial, name='procedimento_pericial'),
+    path('api/word/gerar_documento_teste/', views.gerar_arquivo_word_teste, name='gerar_documento_teste'),
+    path('login/', views.login, name='login')
 ]

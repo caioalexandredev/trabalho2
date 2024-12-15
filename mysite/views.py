@@ -2,6 +2,9 @@ from django.http import JsonResponse
 from .services import GalileuAPIService
 from .services import WordFileGenerator
 from django.http import HttpResponse
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 def procedimento_pericial(request, id):
     if request.method == 'GET':
@@ -34,3 +37,20 @@ def gerar_arquivo_word_teste(request):
     response['Content-Disposition'] = 'attachment; filename="relatorio.docx"'
 
     return response
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        if username == 'admin' and password == '123':
+            request.session['logged_in'] = True
+            request.session['login'] = request.POST.get('username')
+            return redirect('/')
+        else:
+            messages.error(request, "Usuário ou senha incorretos.")
+
+    return render(request, 'login.html')
