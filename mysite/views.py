@@ -46,10 +46,15 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 
 def login(request):
+    if request.method == 'GET':
+        if 'logged_in' in request.session and request.session['logged_in']:
+            return redirect('/')
+        
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
+        # TODO Por enquanto temos somente esse admin hardcode até recebemos a comunicação do Galileu
         if username == 'admin' and password == '123':
             request.session['logged_in'] = True
             request.session['login'] = request.POST.get('username')
@@ -58,3 +63,16 @@ def login(request):
             messages.error(request, "Usuário ou senha incorretos.")
 
     return render(request, 'login.html')
+
+def index(request):
+    if request.method == 'GET':
+        if not request.session.get('logged_in', False):
+            messages.error(request, "É necessário realizar o login.")
+            return redirect('/login')
+    
+    return render(request, 'index.html')
+
+def logout(request):
+    request.session.pop('logged_in', None)
+    request.session.pop('login', None)
+    return redirect('/login')
