@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import path
 from . import views
+from .views import minha_pagina
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/galileu/procedimento_pericial/<int:id>/', views.procedimento_pericial, name='procedimento_pericial'),
     path('api/word/gerar_documento_teste/', views.gerar_arquivo_word_teste, name='gerar_documento_teste'),
+    path('minha-pagina/', minha_pagina, name='minha_pagina'),
     path('login/', views.login, name='login')
 ]

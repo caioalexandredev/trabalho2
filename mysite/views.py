@@ -3,6 +3,7 @@ from .services import GalileuAPIService
 from .services import WordFileGenerator
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 
@@ -37,6 +38,9 @@ def gerar_arquivo_word_teste(request):
     response['Content-Disposition'] = 'attachment; filename="relatorio.docx"'
 
     return response
+
+def minha_pagina(request):
+    return render(request, 'modelo.html')
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
