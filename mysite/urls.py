@@ -19,9 +19,11 @@ from django.urls import path
 from django.urls import path
 from .views import procedimento_pericial
 from .views import gerar_arquivo_word_teste
+from .views import minha_pagina
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/galileu/procedimento_pericial/<int:id>/', procedimento_pericial, name='procedimento_pericial'),
     path('api/word/gerar_documento_teste/', gerar_arquivo_word_teste, name='gerar_documento_teste'),
+    path('minha-pagina/', minha_pagina, name='minha_pagina')
 ]

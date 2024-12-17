@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from .services import GalileuAPIService
 from .services import WordFileGenerator
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def procedimento_pericial(request, id):
     if request.method == 'GET':
@@ -34,3 +35,6 @@ def gerar_arquivo_word_teste(request):
     response['Content-Disposition'] = 'attachment; filename="relatorio.docx"'
 
     return response
+
+def minha_pagina(request):
+    return render(request, 'modelo.html')
