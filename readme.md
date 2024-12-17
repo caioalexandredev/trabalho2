@@ -1,4 +1,4 @@
-# Trabalho 02 - IFTO - Campus Palmas - Extensão Noturno
+# DocForense - IFTO - Campus Palmas - Extensão Noturno
 
 ## 🚀 Instalação
 
@@ -55,12 +55,3 @@ Para instalar o módulo responsável por gerar arquivo word
 ```
 > pip install python-docx
 ```
-
-## ✒️ Autores
-
-4° período do curso noturno de sistemas para internet do Instituto Federal de Educação, Ciências e Tecnoclogia do Tocantins - *Campus Palmas*
-
-* **Arthur Machado Guimarães Sampaio Perna** - *Desenvolvedor* - [Acessar Github](https://github.com/arthurmachado011)
-* **Caio Alexandre de Sousa Ramos** - *Desenvolvedor* - [Acessar Github](https://github.com/caioalexandredev)
-* **Daniel** - *Desenvolvedor*
-* **Fernando Martins** - *Desenvolvedor*
